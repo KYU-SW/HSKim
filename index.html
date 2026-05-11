@@ -36,6 +36,11 @@
             padding-top: 70px; /* 네비게이션 바 높이만큼 여백 */
         }
 
+        /* 네비게이션 이동 시 상단 가려짐 방지 */
+        section, h2.section-title {
+            scroll-margin-top: 90px;
+        }
+
         /* Top Navigation Bar */
         .navbar {
             position: fixed;
@@ -94,6 +99,15 @@
             text-align: center;
         }
 
+        .hero-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
         .hero h1 {
             font-size: 2.8rem;
             margin-bottom: 1rem;
@@ -125,6 +139,13 @@
         .about-card h2 {
             color: var(--primary-color);
             margin-bottom: 1rem;
+        }
+
+        .about-content {
+            text-align: left;
+            display: inline-block;
+            max-width: 800px;
+            width: 100%;
         }
 
         /* Cards Layout (CSS Grid) */
@@ -222,6 +243,25 @@
             color: var(--white);
         }
 
+        /* Skill Tags */
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background: var(--bg-color);
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: 1px solid var(--primary-color);
+        }
+
         .btn-fill:hover {
             background: var(--primary-dark);
         }
@@ -243,84 +283,143 @@
         <i class="fa-solid fa-vr-cardboard"></i> DXP Lab
     </a>
     <ul class="nav-links">
-        <li><a href="#" class="active"><i class="fa-solid fa-wand-magic-sparkles"></i> 현재 페이지 (Modern)</a></li>
-        <!-- 이전 페이지 파일명을 old.html 혹은 previous.html 로 맞추어 학생들에게 링크 이동을 시연하시면 됩니다 -->
-        <li><a href="index_initial.html"><i class="fa-solid fa-clock-rotate-left"></i> 이전 페이지 (Basic)</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
 <!-- Hero Section -->
-<header class="hero">
-    <h1>OOOOOOOOO Kim</h1>
-    <p class="role">Professor & Director of DXP Lab</p>
+<header id="home" class="hero">
+    <!-- 대표 이미지 -->
+    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" alt="Profile Image" class="hero-img">
+    <h1>안녕하세요, 성장하는 인재 OOO입니다.</h1>
+    <p class="role">사용자 경험을 최우선으로 생각하며 문제 해결을 즐기는 예비 전문가입니다.</p>
 </header>
 
 <main class="container">
     <!-- About Section -->
-    <section class="about-card">
+    <section id="about" class="about-card">
         <h2><i class="fa-solid fa-user-tie"></i> About Me</h2>
-        <p>
-            인간과 컴퓨터의 상호작용(HCI)을 연구하며, 가상현실(VR) 및 증강현실(AR) 환경에서의 
-            사용자 경험 개선과 <strong>사이버멀미(Cybersickness) 저감 기술</strong>에 집중하고 있습니다. 
-            데이터 전처리 및 분석 역량을 바탕으로 국방(National Defense) 및 의료 등 다양한 도메인을 위한 초실감형 몰입 기술을 탐구합니다.
-        </p>
+        <div class="about-content">
+            <p><strong>자기소개:</strong> 안녕하세요. 아이디어를 현실로 구현하는 과정을 즐기는 학생입니다.</p>
+            <p><strong>소속:</strong> 건양대학교 OOO학과</p>
+            <p><strong>관심 분야:</strong> 웹 프론트엔드 개발, 사용자 인터페이스(UI/UX), 인공지능 활용</p>
+            <p><strong>성격 및 강점:</strong> 꼼꼼한 성격으로 디테일을 놓치지 않으며, 팀 프로젝트 시 원활한 의사소통으로 협업을 주도합니다.</p>
+        </div>
     </section>
 
-    <h2 class="section-title">Research Interests</h2>
+    <!-- Vision Section -->
+    <section id="vision" class="about-card">
+        <h2><i class="fa-solid fa-lightbulb"></i> Vision</h2>
+        <div class="about-content">
+            <p><strong>진로 목표:</strong> 기술적 문제 해결력과 사용자 중심 사고를 갖춘 풀스택/프론트엔드 개발자</p>
+            <p><strong>전문가상:</strong> 단순히 기능을 구현하는 것을 넘어, 비즈니스 가치와 사용자 편의성을 동시에 고려하는 "Product-minded Developer"가 되고 싶습니다.</p>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="about-card">
+        <h2><i class="fa-solid fa-book"></i> Courses</h2>
+        <div class="about-content">
+            <ul style="line-height: 2;">
+                <li>웹 프로그래밍 기초 (HTML/CSS/JavaScript)</li>
+                <li>인간-컴퓨터 상호작용 (HCI) 개론</li>
+                <li>자료구조 및 알고리즘</li>
+                <li>데이터베이스 설계 및 구현</li>
+            </ul>
+        </div>
+    </section>
+
+    <h2 id="projects" class="section-title"><i class="fa-solid fa-laptop-code"></i> Projects</h2>
     
     <!-- Cards Section -->
     <section class="card-grid">
         <!-- Card 1 -->
         <article class="card">
-            <img src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=600&q=80" alt="VR Headset" class="card-img">
+            <img src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=600&q=80" alt="Project 1" class="card-img">
             <div class="card-content">
-                <i class="fa-solid fa-shield-halved"></i>
-                <h3>XR for National Defense</h3>
-                <p>국방 훈련을 위한 초실감형 메타버스 인터페이스 연구 및 인공지능 기반 인간 검증 데이터셋 구축.</p>
+                <h3>개인 포트폴리오 웹사이트 제작</h3>
+                <p><strong>역할:</strong> 기획 및 웹 프론트엔드 구현 (100%)</p>
+                <p><strong>결과물:</strong> HTML/CSS를 활용한 반응형 웹페이지 배포</p>
             </div>
         </article>
 
         <!-- Card 2 -->
         <article class="card">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Data Analysis" class="card-content-img card-img">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Project 2" class="card-img">
             <div class="card-content">
-                <i class="fa-solid fa-eye"></i>
-                <h3>Cybersickness Mitigation</h3>
-                <p>시선 추적(Eye-tracking) 및 시각/햅틱 피드백을 활용한 자율주행 및 VR 환경 내 사이버멀미 분석 및 저감 솔루션.</p>
+                <h3>데이터 분석 대시보드 구축</h3>
+                <p><strong>역할:</strong> 데이터 전처리 및 시각화 파트 담당 (50%)</p>
+                <p><strong>결과물:</strong> Python 및 JS 차트를 활용한 인터랙티브 대시보드 완성</p>
             </div>
         </article>
 
         <!-- Card 3 -->
         <article class="card">
-            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Medical Technology" class="card-img">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Project 3" class="card-img">
             <div class="card-content">
-                <i class="fa-solid fa-bed-pulse"></i>
-                <h3>Digital Therapeutics</h3>
-                <p>병상 환자(Bedridden Patients) 및 교통약자를 위한 VR 기반 치료/편의 기술 및 상호작용 인터페이스 설계.</p>
+                <h3>OOO 공모전 출품작</h3>
+                <p><strong>역할:</strong> 앱 아이디어 기획 및 프로토타입 디자인</p>
+                <p><strong>결과물:</strong> Figma 기반 모바일 앱 화면 기획서 작성</p>
             </div>
         </article>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="about-card">
+        <h2><i class="fa-solid fa-wrench"></i> 기술 역량</h2>
+        <div class="skill-tags">
+            <span class="skill-tag">HTML5 / CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">React.js (학습 중)</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Git / GitHub</span>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="about-card">
+        <h2><i class="fa-solid fa-person-running"></i> 활동 사항 </h2>
+        <div class="about-content">
+            <ul style="line-height: 2;">
+                <li><strong>동아리:</strong> 교내 웹/앱 기획 동아리 'OOO' 부원 (2025.03 ~ 현재)</li>
+                <li><strong>특강:</strong> 생성형 AI 활용 프론트엔드 개발 특강 수료 (2025.07)</li>
+                <li><strong>공모전:</strong> 제X회 OOO 해커톤 장려상 수상 (2025.10)</li>
+                <li><strong>발표 경험:</strong> 전공 수업 'OOO' 프로젝트 기획안 최종 발표</li>
+            </ul>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section class="contact-section">
+    <section id="contact" class="contact-section">
         <h2>Let's Connect</h2>
-        <p style="margin-top: 10px; color: var(--text-light);">연구 협력이나 DXP 연구실에 관심이 있으시다면 언제든 연락주세요.</p>
+        <p style="margin-top: 10px; color: var(--text-light);">진행 중인 프로젝트나 포트폴리오에 관심이 있으시다면 언제든 연락주세요.</p>
         <div class="contact-links">
             <a href="mailto:example@korea.ac.kr" class="btn btn-fill">
-                <i class="fa-solid fa-envelope"></i> Email Me
+                <i class="fa-solid fa-envelope"></i> Email
             </a>
             <a href="https://github.com" class="btn btn-outline" target="_blank">
                 <i class="fa-brands fa-github"></i> GitHub
             </a>
-            <a href="#" class="btn btn-outline">
-                <i class="fa-solid fa-globe"></i> Lab Website
+            <a href="#" class="btn btn-outline" target="_blank">
+                <i class="fa-solid fa-blog"></i> Blog
+            </a>
+            <a href="#" class="btn btn-outline" target="_blank">
+                <i class="fa-brands fa-instagram"></i> SNS
             </a>
         </div>
     </section>
 </main>
 
 <footer>
-    <p>&copy; 2026 Hanseob Kim & DXP Lab. All rights reserved.</p>
+    <p>&copy; 2026 OOO Portfolio. All rights reserved.</p>
 </footer>
 
 </body>
