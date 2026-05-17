@@ -266,6 +266,93 @@
             background: var(--primary-dark);
         }
 
+        /* Timeline Layout */
+        .timeline {
+            position: relative;
+            margin: 2rem auto 0;
+            padding-left: 40px;
+            text-align: left;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px; /* 선의 위치 */
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--primary-light);
+            opacity: 0.2;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -40px;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--white);
+            border: 4px solid var(--primary-color);
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            background: var(--bg-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-color: var(--primary-light);
+            transform: translateY(-3px);
+        }
+
+        .timeline-item:hover .timeline-dot {
+            background-color: var(--primary-light);
+            transform: scale(1.2);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-size: 1.1rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
         footer {
             text-align: center;
             padding: 2rem 0;
@@ -276,6 +363,9 @@
     </style>
 </head>
 <body>
+
+
+    
 
 <!-- Top Navigation -->
 <nav class="navbar">
@@ -387,13 +477,41 @@
     <!-- Activities Section -->
     <section id="activities" class="about-card">
         <h2><i class="fa-solid fa-person-running"></i> 활동 사항 </h2>
-        <div class="about-content">
-            <ul style="line-height: 2;">
-                <li><strong>동아리:</strong> 교내 웹/앱 기획 동아리 'OOO' 부원 (2025.03 ~ 현재)</li>
-                <li><strong>특강:</strong> 생성형 AI 활용 프론트엔드 개발 특강 수료 (2025.07)</li>
-                <li><strong>공모전:</strong> 제X회 OOO 해커톤 장려상 수상 (2025.10)</li>
-                <li><strong>발표 경험:</strong> 전공 수업 'OOO' 프로젝트 기획안 최종 발표</li>
-            </ul>
+        <div class="timeline">
+            <!-- 현재 진행중인 항목을 최상단 배치 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2025.03 ~ 현재</div>
+                <div class="timeline-content">
+                    <h3>교내 웹/앱 기획 동아리 'OOO' 부원</h3>
+                    <p>동아리 활동</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2025.10</div>
+                <div class="timeline-content">
+                    <h3>제X회 OOO 해커톤 장려상 수상</h3>
+                    <p>공모전</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2025.07</div>
+                <div class="timeline-content">
+                    <h3>생성형 AI 활용 프론트엔드 개발 특강 수료</h3>
+                    <p>특강</p>
+                </div>
+            </div>
+            <!-- 임의로 날짜(2024.12) 부여 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2024.12</div>
+                <div class="timeline-content">
+                    <h3>전공 수업 'OOO' 프로젝트 기획안 최종 발표</h3>
+                    <p>발표 경험</p>
+                </div>
+            </div>
         </div>
     </section>
 
